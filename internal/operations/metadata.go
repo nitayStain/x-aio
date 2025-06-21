@@ -5,11 +5,6 @@ import (
 	"strings"
 )
 
-type metadataRaw struct {
-	FeatureSwitches []string
-	FieldToggles    []string
-}
-
 // parseMetadata extracts featureSwitches and fieldToggles from a metadata string.
 func parseMetadata(meta string) metadataRaw {
 	var m metadataRaw

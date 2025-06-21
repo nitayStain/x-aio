@@ -11,7 +11,8 @@ const userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/5
 func GetPageContent(url string) (string, error) {
 	client := &http.Client{
 		Timeout: time.Second * 10,
-		Transport: &http.Transport{ // Force HTTP2, so the request will pass
+		Transport: &http.Transport{ // Force HTTP2
+			
 			ForceAttemptHTTP2: true,
 		},
 	}

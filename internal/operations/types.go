@@ -10,3 +10,8 @@ type Operation struct {
 	FeatureSwitches []string `json:"featureSwitches"`
 	FieldToggles    []string `json:"fieldToggles"`
 }
+
+type metadataRaw struct {
+	FeatureSwitches []string
+	FieldToggles    []string
+}

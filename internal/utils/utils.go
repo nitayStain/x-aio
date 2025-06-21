@@ -12,7 +12,7 @@ func GetPageContent(url string) (string, error) {
 	client := &http.Client{
 		Timeout: time.Second * 10,
 		Transport: &http.Transport{ // Force HTTP2
-			
+
 			ForceAttemptHTTP2: true,
 		},
 	}

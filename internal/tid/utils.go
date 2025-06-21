@@ -14,6 +14,11 @@ import (
 func handleXMigration(client *http.Client) (*goquery.Document, error) {
 	migrationRegex := regexp.MustCompile(`https?://(?:www\.)?(twitter|x)\.com(/x)?/migrate([/?])?tok=[a-zA-Z0-9%\-_]+`)
 
+	req, err := http.NewRequest("GET", "https://x.com", nil)
+	if err != nil {
+		return nil, err
+	}
+
 	resp, err := client.Get("https://x.com")
 	if err != nil {
 		return nil, err
